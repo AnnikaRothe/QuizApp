@@ -14,6 +14,7 @@ body {
 .quizCard {
     width: 35rem;
     background-color: rgba(111, 3, 109, 0.907) !important;
+    color: rgb(142, 236, 132) !important;
 }
 
 .questionFooter {
@@ -22,4 +23,14 @@ body {
     align-items: center;
     padding-top: 12px;
     border-top: 1px solid rgba(2, 63, 2, 0.3);
+}
+
+.answerCard:hover {
+    cursor: pointer;
+    background-color: #eaf5ee91;
+}
+
+.bg-success,
+.bg-danger {
+    color: white;
 }

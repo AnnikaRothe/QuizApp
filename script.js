@@ -49,3 +49,37 @@ let questions = [
     rightAnswer: 4,
   },
 ];
+
+let currentQuestion = 0;
+
+function render() {
+  document.getElementById("allQuestions").innerHTML = questions.length;
+
+  showQuestion();
+}
+
+function showQuestion() {
+  let question = questions[currentQuestion];
+
+  document.getElementById("questionText").innerHTML = question["question"];
+  document.getElementById("answer1").innerHTML = question["answer1"];
+  document.getElementById("answer2").innerHTML = question["answer2"];
+  document.getElementById("answer3").innerHTML = question["answer3"];
+  document.getElementById("answer4").innerHTML = question["answer4"];
+}
+
+function answer(answerX) {
+  let question = questions[currentQuestion];
+  let selectedAnswerNumber = answerX.slice(-1);
+
+  let idOfRightAnswer = `answer${question["rightAnswer"]}`;
+
+  if (selectedAnswerNumber == question["rightAnswer"]) {
+    document.getElementById(answerX).parentNode.classList.add("bg-success");
+  } else {
+    document.getElementById(answerX).parentNode.classList.add("bg-danger");
+    document
+      .getElementById(idOfRightAnswer)
+      .parentNode.classList.add("bg-success");
+  }
+}

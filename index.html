@@ -15,7 +15,7 @@
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 </head>
 
-<body>
+<body onload="render()">
 
 
 
@@ -28,35 +28,35 @@
         <div class="card quizCard">
             <img src="./img/MainPic.jpg" class="card-img-top" alt="Foto mit vielen Fragezeichen">
             <div class="card-body">
-                <h5 class="card-title">Frage</h5>
+                <h5 class="card-title" id="questionText">Frage</h5>
 
-                <div class="card mb-2">
-                    <div class="card-body">
+                <div class="card answerCard mb-2" onclick="answer('answer1')">
+                    <div class="card-body" id="answer1">
                         Antwort
                     </div>
                 </div>
 
-                <div class="card mb-2">
-                    <div class="card-body">
+                <div class="card answerCard mb-2" onclick="answer('answer2')">
+                    <div class="card-body" id="answer2">
                         Antwort
                     </div>
                 </div>
 
-                <div class="card mb-2">
-                    <div class="card-body">
+                <div class="card answerCard mb-2" onclick="answer('answer3')">
+                    <div class="card-body" id="answer3">
                         Antwort
                     </div>
                 </div>
 
-                <div class="card mb-2">
-                    <div class="card-body">
+                <div class="card answerCard mb-2" onclick="answer('answer4')">
+                    <div class="card-body" id="answer4">
                         Antwort
                     </div>
                 </div>
 
                 <div class="questionFooter">
                     <div>
-                        <b>1</b> von <b>5</b> Fragen
+                        <b>1</b> von <b id="allQuestions">5</b> Fragen
                     </div>
                     <button class="btn btn-success">Nächste Frage</button>
                 </div>
