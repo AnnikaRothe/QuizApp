@@ -1,11 +1,25 @@
 body {
-    background-color: rgb(137, 43, 226) !important;
+    background-color: #0a4923;
+    background-image: url(./img/endless-constellation.svg)
 }
 
 .container {
     min-height: 100vh;
-    background-color: rgb(137, 43, 226) !important;
+    background-image: url(./img/endless-constellation.svg);
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.quizCard {
+    width: 35rem;
+    background-color: rgba(111, 3, 109, 0.907) !important;
+}
+
+.questionFooter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 12px;
+    border-top: 1px solid rgba(2, 63, 2, 0.3);
 }
