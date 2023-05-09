@@ -1,10 +1,10 @@
 let questions = [
   {
-    question: "Was ist der Lieblingsfilm eines Programmierers?",
-    answer1: "The Matrix",
-    answer2: "Hackers",
-    answer3: "Tron",
-    answer4: "Office Space",
+    question: "Wer hat HTML erfunden?",
+    answer1: "Deine Mutter",
+    answer2: "Tim Berners-Lee",
+    answer3: "Prinzessin Lilifee",
+    answer4: "Shrek",
     rightAnswer: 2,
   },
   {
@@ -61,6 +61,7 @@ function render() {
 
 function showQuestion() {
   if (currentQuestion >= questions.length) {
+    //Show end screen
     document.getElementById("endScreen").style = "";
     document.getElementById("questionBody").style = "display:none";
 
@@ -68,6 +69,14 @@ function showQuestion() {
     document.getElementById("amountCorrectAnswers").innerHTML = correctAnswers;
     document.getElementById("headerImage").src = "./img/wellDone.png";
   } else {
+    //Show current question
+
+    let percent = (currentQuestion + 1) / questions.length;
+    //zum Aufrunden
+    percent = Math.round(percent * 100);
+    document.getElementById("progressBar").innerHTML = `${percent}%`;
+    document.getElementById("progressBar").style = ` width:${percent}%`;
+
     let question = questions[currentQuestion];
 
     document.getElementById("currentNumber").innerHTML = currentQuestion + 1;

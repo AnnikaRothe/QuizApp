@@ -44,3 +44,10 @@ body {
     font-size: 25px;
     margin: 15px;
 }
+
+
+.progress {
+    background-color: rgba(111, 3, 109, 0.907) !important;
+    --bs-progress-bar-bg: #056919 !important;
+    --bs-progress-bar-color: #100f0f !important;
+}
