@@ -51,3 +51,15 @@ body {
     --bs-progress-bar-bg: #056919 !important;
     --bs-progress-bar-color: #100f0f !important;
 }
+
+.restartButton {
+    display: flex;
+    justify-content: center;
+    margin: 25px;
+}
+
+.h1 {
+    text-align: center;
+    color: rgb(6, 163, 37) !important;
+    padding-top: 15px;
+}
