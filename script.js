@@ -50,6 +50,7 @@ let questions = [
   },
 ];
 
+let correctAnswers = 0;
 let currentQuestion = 0;
 
 function render() {
@@ -59,27 +60,57 @@ function render() {
 }
 
 function showQuestion() {
-  let question = questions[currentQuestion];
+  if (currentQuestion >= questions.length) {
+    document.getElementById("endScreen").style = "";
+    document.getElementById("questionBody").style = "display:none";
 
-  document.getElementById("questionText").innerHTML = question["question"];
-  document.getElementById("answer1").innerHTML = question["answer1"];
-  document.getElementById("answer2").innerHTML = question["answer2"];
-  document.getElementById("answer3").innerHTML = question["answer3"];
-  document.getElementById("answer4").innerHTML = question["answer4"];
+    document.getElementById("amountQuestions").innerHTML = questions.length;
+    document.getElementById("amountCorrectAnswers").innerHTML = correctAnswers;
+    document.getElementById("headerImage").src = "./img/wellDone.png";
+  } else {
+    let question = questions[currentQuestion];
+
+    document.getElementById("currentNumber").innerHTML = currentQuestion + 1;
+    document.getElementById("questionText").innerHTML = question["question"];
+    document.getElementById("answer1").innerHTML = question["answer1"];
+    document.getElementById("answer2").innerHTML = question["answer2"];
+    document.getElementById("answer3").innerHTML = question["answer3"];
+    document.getElementById("answer4").innerHTML = question["answer4"];
+  }
 }
 
 function answer(answerX) {
   let question = questions[currentQuestion];
   let selectedAnswerNumber = answerX.slice(-1);
-
   let idOfRightAnswer = `answer${question["rightAnswer"]}`;
 
   if (selectedAnswerNumber == question["rightAnswer"]) {
     document.getElementById(answerX).parentNode.classList.add("bg-success");
+    correctAnswers++;
   } else {
     document.getElementById(answerX).parentNode.classList.add("bg-danger");
     document
       .getElementById(idOfRightAnswer)
       .parentNode.classList.add("bg-success");
   }
+  document.getElementById("button").disabled = false;
+}
+
+function nextQuestion() {
+  currentQuestion++; //von Frage 0 zu Frage 1 und so weiter (globale Variable)
+
+  document.getElementById("button").disabled = true;
+  resetAnswerColors();
+  showQuestion();
+}
+
+function resetAnswerColors() {
+  document.getElementById("answer1").parentNode.classList.remove("bg-danger");
+  document.getElementById("answer1").parentNode.classList.remove("bg-success");
+  document.getElementById("answer2").parentNode.classList.remove("bg-danger");
+  document.getElementById("answer2").parentNode.classList.remove("bg-success");
+  document.getElementById("answer3").parentNode.classList.remove("bg-danger");
+  document.getElementById("answer3").parentNode.classList.remove("bg-success");
+  document.getElementById("answer4").parentNode.classList.remove("bg-danger");
+  document.getElementById("answer4").parentNode.classList.remove("bg-success");
 }

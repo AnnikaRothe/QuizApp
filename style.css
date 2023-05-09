@@ -14,7 +14,7 @@ body {
 .quizCard {
     width: 35rem;
     background-color: rgba(111, 3, 109, 0.907) !important;
-    color: rgb(142, 236, 132) !important;
+    color: rgb(35, 152, 22) !important;
 }
 
 .questionFooter {
@@ -33,4 +33,14 @@ body {
 .bg-success,
 .bg-danger {
     color: white;
+}
+
+.width-100 {
+    width: 100%;
+}
+
+.text-center {
+    text-align: center;
+    font-size: 25px;
+    margin: 15px;
 }

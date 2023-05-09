@@ -26,8 +26,20 @@
     </nav>
     <div class="container">
         <div class="card quizCard">
-            <img src="./img/MainPic.jpg" class="card-img-top" alt="Foto mit vielen Fragezeichen">
-            <div class="card-body">
+            <img src="./img/MainPic.jpg" id="headerImage" class="card-img-top" alt="Foto mit vielen Fragezeichen">
+            <div>
+                <div class="cardBody" id="endScreen" style="display: none;">
+                    <div style="font-size: 35px;" class="text-center"> Quiz beendet!
+                    </div>
+
+
+                    <div class="text-center"> Du hast <b id="amountCorrectAnswers">XXX</b> Fragen von <b
+                            id="amountQuestions">XXX</b> richtig
+                        beantwortet!</div>
+                </div>
+            </div>
+
+            <div class="card-body" id="questionBody">
                 <h5 class="card-title" id="questionText">Frage</h5>
 
                 <div class="card answerCard mb-2" onclick="answer('answer1')">
@@ -56,9 +68,10 @@
 
                 <div class="questionFooter">
                     <div>
-                        <b>1</b> von <b id="allQuestions">5</b> Fragen
+                        <b id="currentNumber">1</b> von <b id="allQuestions">5</b> Fragen
                     </div>
-                    <button class="btn btn-success">Nächste Frage</button>
+                    <button onclick="nextQuestion()" class="btn btn-success" id="button" disabled>Nächste
+                        Frage</button>
                 </div>
 
 
